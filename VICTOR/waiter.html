@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <div class="containerfx container " style="margin-top: 10px; ">
+        <div class="row">
+            <div class="col-md-6">
+
+
+                <img class="img-fluid" style="height: 100%;" src="css/waiter.jpg" alt="Card image">
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="card" style="width:400px; margin-Left: -30px;">
+                    <div class="card-body">
+                        <!-- <img class="card-img-left" src="css/waiter.jpg" alt="Card image"> -->
+
+                        <form action="order.html" method="POST" id="form" class="form">
+
+                            <h2 class="dss"> Please login</h2>
+
+                            <div class="form-grp">
+                                <label for="">Employee Name:    </label><i class=" fa fa-check-square" style="margin-left: 10px;"></i>
+                                <input type="text" name="name" class="form-control" id="name"><br>
+
+                                <i class="fa fa-dot-circle-o "></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-grp">
+                                <label for="">Password:</label><i class=" fa fa-check-square" style="margin-left: 10px;"></i>
+                                <input type="password" id="password" class="form-control" name="password" id="password">
+
+
+                                <i class="fa fa-dot-circle-o "></i>
+                                <small>Error message</small>
+                            </div><br>
+                            <input type="submit" class="btn btn-danger btn-block" name="login" value="LOGIN">
+                        </form>
+                        <!-- <form id="form" class="form">
+                            <div class="form-control">
+                                <label for="username">Username</label>
+                                <input type="text" placeholder="florinpop17" id="username" />
+                               
+                            </div>
+
+                            <div class="form-control">
+                                <label for="username">Password</label>
+                                <input type="password" placeholder="Password" id="password" />
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+
+                            <input type="submit" class="btn btn-danger btn-block" name="login" value="LOGIN">
+
+                        </form>
+                    </div> -->
+
+
+                        <!-- SOCIAL PANEL HTML -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <script>
+                const form = document.getElementById('form');
+                const username = document.getElementById('name');
+
+                const password = document.getElementById('password');
+
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    checkInputs();
+
+
+                });
+
+                function checkInputs() {
+                    // trim to remove the whitespaces
+                    const usernameValue = username.value.trim();
+
+                    const passwordValue = password.value.trim();
+
+                    if (usernameValue === '') {
+                        setErrorFor(username, 'Username cannot be blank');
+                    } else {
+                        setSuccessFor(username);
+                    }
+
+                    if (passwordValue === '') {
+                        setErrorFor(password, 'Password cannot be blank');
+                    } else {
+                        setSuccessFor(password);
+                    }
+
+
+                }
+
+
+                function setErrorFor(input, message) {
+                    const formControl = input.parentElement;
+                    const small = formControl.querySelector('small');
+                    formControl.className = 'form-grp error';
+                    small.innerText = message;
+                }
+
+                function setSuccessFor(input) {
+                    const formControl = input.parentElement;
+                    formControl.className = 'form-grp success';
+                }
+            </script>
+
+            <script src=" js/jquery-2.1.0.min.js"></script>
+
+            <!-- Bootstrap -->
+            <script src=" js/popper.js"></script>
+            <script src=" js/bootstrap.min.js"></script>
+
+            <!-- Plugins -->
+            <script src=" js/scrollreveal.min.js"></script>
+
+            <script src=" js/jquery.counterup.min.js"></script>
+            <script src="js/imgfix.min.js"></script>
+            <script src="js/mixitup.js"></script>
+
+
+
+
+</body>
+
+</html>
